@@ -7,7 +7,7 @@ namespace Sikiro.AkkaDB.Client
     {
         static void Main(string[] args)
         {
-            var configCenterClient = new ConfigCenterClient("localhost:1218");
+            var configCenterClient = new AkkaDBClient("localhost:1218");
 
             while (true)
             {

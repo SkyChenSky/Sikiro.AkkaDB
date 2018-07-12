@@ -5,7 +5,7 @@ using Sikiro.AkkaDB.Entity;
 
 namespace Sikiro.AkkaDB.Client
 {
-    public class ConfigCenterClient
+    public class AkkaDBClient
     {
         private readonly ActorSystem _system = ActorSystem.Create("SikiroConfigCenterClient", ConfigurationFactory.ParseString(@"
 akka {  
@@ -18,7 +18,7 @@ akka {
 
         public bool IsConnect { get; }
 
-        public ConfigCenterClient(string remoteAddress)
+        public AkkaDBClient(string remoteAddress)
         {
             _remoteDb = _system.ActorSelection($"akka.tcp://SikiroConfigCenterServer@{remoteAddress}/user/Server");
 
